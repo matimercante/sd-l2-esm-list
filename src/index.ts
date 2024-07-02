@@ -13,11 +13,13 @@ Observen el dist/index.js
 */
 
 import { headerComponent } from "./header.js";
+import { footerComponent } from "./footer.js";
 import { productsListComponent } from "./products.js";
-
 document.addEventListener("DOMContentLoaded", () => {
   const headerContainer = document.getElementById("header");
   const productsContainer = document.getElementById("products");
+  const footerContainer = document.getElementById("footer");
   headerContainer.appendChild(headerComponent());
+  footerContainer.appendChild(footerComponent());
   productsContainer.appendChild(productsListComponent());
 });

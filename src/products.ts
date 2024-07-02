@@ -1,19 +1,16 @@
-import productsList from "./products.json" assert { type: "json" };
+import { getProductSortedByPrice } from "./products-model.js";
 
 export function productsListComponent() {
+  const products = getProductSortedByPrice();
   const section = document.createElement("section");
   section.style.border = "solid 1px #ccc";
   section.style.padding = "10px";
-
   const list = document.createElement("ul");
-
-  productsList.forEach((product) => {
+  products.forEach((product) => {
     const listItem = document.createElement("li");
     listItem.textContent = `${product.title} - $${product.price}`;
     list.appendChild(listItem);
   });
-
   section.appendChild(list);
-
   return section;
 }
